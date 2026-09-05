@@ -1,0 +1,14 @@
+{
+  "generation_seed": 48,
+  "generation_attempt": 7,
+  "sensor_nodes": 50,
+  "sink_nodes": 1,
+  "total_devices": 51,
+  "undirected_links": 172,
+  "communication_range_m": 300.0,
+  "minimum_neighbors_required": 2,
+  "minimum_sensor_neighbors_observed": 2,
+  "maximum_sensor_neighbors_observed": 12,
+  "average_sensor_neighbors": 6.8,
+  "all_sensors_reach_sink": true
+}

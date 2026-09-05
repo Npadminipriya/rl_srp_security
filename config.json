@@ -1,0 +1,90 @@
+{
+  "simulation": {
+    "random_seed": 42,
+    "duration_seconds": 500,
+    "packet_size_bytes": 100,
+    "packet_generation_interval_seconds": 1.0
+  },
+
+  "topology": {
+    "sensor_nodes": 50,
+    "sink_nodes": 1,
+    "dedicated_relay_nodes": 0,
+
+    "area_x_m": 1000.0,
+    "area_y_m": 1000.0,
+    "depth_m": 500.0,
+    "minimum_sensor_depth_m": 50.0,
+
+    "communication_range_m": 300.0,
+    "minimum_neighbors": 2,
+    "maximum_generation_attempts": 1000,
+
+    "deployment": "uniform_random_3d",
+    "mobility_enabled": false,
+    "node_speed_mps": 1.0
+  },
+
+  "sink": {
+    "placement": "surface_center",
+    "x_m": 500.0,
+    "y_m": 500.0,
+    "z_m": 0.0
+  },
+
+  "energy": {
+    "initial_energy_j": 50.0,
+    "transmit_power_w": 2.0,
+    "receive_power_w": 0.75,
+    "data_rate_bps": 10000.0
+  },
+
+  "trust": {
+    "initial_value": 0.5,
+    "malicious_threshold": 0.4,
+    "memory_factor": 0.8
+  },
+
+  "q_learning": {
+  "learning_rate": 0.1,
+  "discount_factor": 0.9,
+  "epsilon_start": 0.1,
+  "epsilon_min": 0.01,
+  "epsilon_decay": 0.995,
+
+  "training_episodes": 5000,
+  "maximum_hops_per_episode": 30,
+  "sink_reward": 1.0,
+  "dead_end_penalty": -1.0,
+  "loop_penalty": -0.5
+},
+
+  "state": {
+  "energy_bins": 5,
+  "link_quality_bins": 5,
+  "trust_bins": 5,
+  "distance_bins": 5
+},
+
+  "reward": {
+  "trust_weight": 0.40,
+  "distance_progress_weight": 0.30,
+  "energy_cost_weight": 0.15,
+  "delay_weight": 0.15,
+  "packet_loss_weight": 0.00
+},
+
+"security": {
+    "aes_key_bits": 128,
+    "hmac_algorithm": "SHA-256",
+    "hmac_key_bytes": 32,
+    "replay_protection_enabled": true
+  },
+
+  "output": {
+    "directory": "outputs",
+    "save_topology_csv": true,
+    "save_packet_log_csv": true,
+    "save_metrics_csv": true
+  }
+}

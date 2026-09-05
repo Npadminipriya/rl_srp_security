@@ -1,0 +1,51 @@
+packet_id,source_id,delivered,hop_count,route,total_reward,reason
+1,1,True,4,1 -> 12 -> 11 -> 20 -> 0,1.096368,packet delivered
+2,2,True,5,2 -> 31 -> 48 -> 32 -> 20 -> 0,1.073814,packet delivered
+3,3,True,5,3 -> 21 -> 12 -> 11 -> 20 -> 0,1.154076,packet delivered
+4,4,True,5,4 -> 21 -> 12 -> 11 -> 20 -> 0,1.178257,packet delivered
+5,5,True,4,5 -> 26 -> 32 -> 20 -> 0,1.094506,packet delivered
+6,6,True,4,6 -> 23 -> 14 -> 36 -> 0,1.096971,packet delivered
+7,7,True,4,7 -> 16 -> 14 -> 36 -> 0,0.998982,packet delivered
+8,8,True,5,8 -> 39 -> 42 -> 32 -> 20 -> 0,1.029549,packet delivered
+9,9,True,3,9 -> 17 -> 20 -> 0,1.123711,packet delivered
+10,10,True,3,10 -> 32 -> 20 -> 0,1.063850,packet delivered
+11,11,True,2,11 -> 20 -> 0,1.020729,packet delivered
+12,12,True,3,12 -> 11 -> 20 -> 0,1.071419,packet delivered
+13,13,True,5,13 -> 49 -> 48 -> 32 -> 20 -> 0,1.100894,packet delivered
+14,14,True,2,14 -> 36 -> 0,1.067718,packet delivered
+15,15,True,3,15 -> 14 -> 36 -> 0,1.053862,packet delivered
+16,16,True,3,16 -> 14 -> 36 -> 0,1.071668,packet delivered
+17,17,True,2,17 -> 20 -> 0,1.070467,packet delivered
+18,18,True,5,18 -> 21 -> 12 -> 11 -> 20 -> 0,1.050794,packet delivered
+19,19,True,7,19 -> 29 -> 8 -> 39 -> 42 -> 32 -> 20 -> 0,1.107314,packet delivered
+20,20,True,1,20 -> 0,1.045076,packet delivered
+21,21,True,4,21 -> 12 -> 11 -> 20 -> 0,1.117678,packet delivered
+22,22,True,5,22 -> 49 -> 48 -> 32 -> 20 -> 0,1.131678,packet delivered
+23,23,True,3,23 -> 14 -> 36 -> 0,1.084862,packet delivered
+24,24,True,6,24 -> 18 -> 21 -> 12 -> 11 -> 20 -> 0,1.032766,packet delivered
+25,25,True,3,25 -> 32 -> 20 -> 0,1.084093,packet delivered
+26,26,True,3,26 -> 32 -> 20 -> 0,1.073613,packet delivered
+27,27,True,6,27 -> 13 -> 49 -> 48 -> 32 -> 20 -> 0,1.150846,packet delivered
+28,28,True,4,28 -> 23 -> 14 -> 36 -> 0,1.113333,packet delivered
+29,29,True,6,29 -> 8 -> 39 -> 42 -> 32 -> 20 -> 0,1.079719,packet delivered
+30,30,True,6,30 -> 8 -> 39 -> 42 -> 32 -> 20 -> 0,1.070211,packet delivered
+31,31,True,4,31 -> 48 -> 32 -> 20 -> 0,1.069905,packet delivered
+32,32,True,2,32 -> 20 -> 0,1.055840,packet delivered
+33,33,True,4,33 -> 10 -> 32 -> 20 -> 0,1.092254,packet delivered
+34,34,True,6,34 -> 13 -> 49 -> 48 -> 32 -> 20 -> 0,1.059866,packet delivered
+35,35,True,5,35 -> 50 -> 23 -> 14 -> 36 -> 0,1.106081,packet delivered
+36,36,True,1,36 -> 0,1.028687,packet delivered
+37,37,True,6,37 -> 2 -> 31 -> 48 -> 32 -> 20 -> 0,1.080396,packet delivered
+38,38,True,4,38 -> 16 -> 14 -> 36 -> 0,1.105579,packet delivered
+39,39,True,4,39 -> 42 -> 32 -> 20 -> 0,1.100679,packet delivered
+40,40,True,5,40 -> 33 -> 10 -> 32 -> 20 -> 0,1.128935,packet delivered
+41,41,True,6,41 -> 4 -> 21 -> 12 -> 11 -> 20 -> 0,1.147114,packet delivered
+42,42,True,3,42 -> 32 -> 20 -> 0,1.046514,packet delivered
+43,43,True,6,43 -> 13 -> 49 -> 48 -> 32 -> 20 -> 0,1.124780,packet delivered
+44,44,True,4,44 -> 12 -> 11 -> 20 -> 0,1.095060,packet delivered
+45,45,True,5,45 -> 47 -> 16 -> 14 -> 36 -> 0,1.153215,packet delivered
+46,46,True,6,46 -> 4 -> 21 -> 12 -> 11 -> 20 -> 0,1.225643,packet delivered
+47,47,True,4,47 -> 16 -> 14 -> 36 -> 0,1.126014,packet delivered
+48,48,True,3,48 -> 32 -> 20 -> 0,1.109004,packet delivered
+49,49,True,4,49 -> 48 -> 32 -> 20 -> 0,1.098777,packet delivered
+50,50,True,4,50 -> 23 -> 14 -> 36 -> 0,1.127226,packet delivered
