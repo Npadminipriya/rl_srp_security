@@ -168,10 +168,7 @@ class TrustManager:
         if success:
             record.successful_forwards += 1
 
-        observed_trust = (
-            record.successful_forwards
-            / record.total_forwards
-        )
+        
 
         memory_factor = (
             self.config.trust.memory_factor
@@ -179,15 +176,15 @@ class TrustManager:
 
         old_trust = record.trust_value
 
-        new_trust = (
-            memory_factor * old_trust
-            + (1.0 - memory_factor)
-            * observed_trust
+        if success:
+            new_trust = min(
+                1.0,
+                record.trust_value + 0.02
         )
-
-        new_trust = max(
-            0.0,
-            min(1.0, new_trust),
+        else:
+            new_trust = max(
+                0.0,
+                record.trust_value - 0.60
         )
 
         record.trust_value = new_trust
@@ -196,9 +193,14 @@ class TrustManager:
             self.config.trust.malicious_threshold
         )
 
-        if record.trust_value < threshold:
-            record.blacklisted = True
-
+        if record.trust_value <= threshold:
+            record.blacklisted = True 
+        if record.blacklisted:
+            print(
+                f"BLACKLISTED: "
+                f"{observer_id} -> {neighbour_id} "
+                f"trust={record.trust_value:.4f}"
+            )
         return record
 
     # ------------------------------------------------

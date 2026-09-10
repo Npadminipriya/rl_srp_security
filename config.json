@@ -40,9 +40,9 @@
   },
 
   "trust": {
-    "initial_value": 0.5,
-    "malicious_threshold": 0.4,
-    "memory_factor": 0.8
+    "initial_value": 1.0,
+    "malicious_threshold": 0.5,
+    "memory_factor": 0.5
   },
 
   "q_learning": {
