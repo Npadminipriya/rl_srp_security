@@ -41,8 +41,8 @@
 
   "trust": {
     "initial_value": 1.0,
-    "malicious_threshold": 0.5,
-    "memory_factor": 0.5
+    "malicious_threshold": 0.7,
+    "memory_factor": 0.9
   },
 
   "q_learning": {

@@ -30,6 +30,7 @@ class ReplayAttack:
         malicious_node_id: int,
         trust_manager,
         replay_probability: float = 0.30,
+        seed: int = 149,
     ):
 
         self.malicious_node_id = malicious_node_id
@@ -38,9 +39,13 @@ class ReplayAttack:
 
         self.replay_probability = replay_probability
 
-        self.packet_history = []
+        # Dedicated random generator so the experiment
+        # is reproducible.
+        self.random = random.Random(seed)
 
-        self.events = []
+        self.packet_history: list[int] = []
+
+        self.events: list[ReplayEvent] = []
 
     def process_hop(
         self,
@@ -49,18 +54,27 @@ class ReplayAttack:
         next_node_id: int,
     ) -> bool:
 
+        # Only the malicious node performs the replay attack.
         if next_node_id != self.malicious_node_id:
             return True
 
+        # Store the current packet so it can become
+        # a replay candidate for later packets.
         self.packet_history.append(packet_id)
 
+        # A replay cannot occur until an older packet exists.
         if len(self.packet_history) < 2:
             return True
 
-        if random.random() > self.replay_probability:
+        # Apply the configured replay probability.
+        if (
+            self.random.random()
+            > self.replay_probability
+        ):
             return True
 
-        replayed_packet = random.choice(
+        # Select an older packet, never the current packet.
+        replayed_packet = self.random.choice(
             self.packet_history[:-1]
         )
 
@@ -71,6 +85,7 @@ class ReplayAttack:
             )
         )
 
+        # Replay is detected and forwarding fails.
         record = (
             self.trust_manager.record_forwarding(
                 observer_id=observer_id,
@@ -94,6 +109,6 @@ class ReplayAttack:
         return False
 
     @property
-    def replay_count(self):
+    def replay_count(self) -> int:
 
         return len(self.events)

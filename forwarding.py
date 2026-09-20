@@ -133,14 +133,16 @@ def forward_packet(
 
 def create_packets(
     topology: TopologyResult,
-    packets_per_sensor: int = 1,
+    packets_per_sensor: int = 5,
 ) -> list[Packet]:
     """
     Generate packets from every sensor node.
 
     The destination is always sink node 0.
     """
-
+    print(
+        f"DEBUG: packets_per_sensor={packets_per_sensor}"
+    )
     packets: list[Packet] = []
 
     packet_id = 1

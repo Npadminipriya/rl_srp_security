@@ -179,12 +179,12 @@ class TrustManager:
         if success:
             new_trust = min(
                 1.0,
-                record.trust_value + 0.02
+                round(record.trust_value + 0.01, 4)
         )
         else:
             new_trust = max(
                 0.0,
-                record.trust_value - 0.60
+                round(record.trust_value - 0.10, 4)
         )
 
         record.trust_value = new_trust
@@ -193,7 +193,7 @@ class TrustManager:
             self.config.trust.malicious_threshold
         )
 
-        if record.trust_value <= threshold:
+        if record.trust_value <= threshold + 1e-9:
             record.blacklisted = True 
         if record.blacklisted:
             print(

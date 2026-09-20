@@ -31,6 +31,9 @@ class SelectiveForwardingAttack:
 
     A malicious node drops only a percentage
     of packets and forwards the rest.
+
+    A dedicated random number generator is used
+    so that the attack experiment is reproducible.
     """
 
     def __init__(
@@ -38,12 +41,16 @@ class SelectiveForwardingAttack:
         malicious_node_id: int,
         trust_manager,
         drop_probability: float = 0.5,
+        seed: int = 4,
     ) -> None:
 
         self.malicious_node_id = malicious_node_id
         self.trust_manager = trust_manager
 
         self.drop_probability = drop_probability
+
+        # Dedicated RNG for reproducible attack behaviour.
+        self.random = random.Random(seed)
 
         self.events: list[AttackEvent] = []
 
@@ -83,7 +90,7 @@ class SelectiveForwardingAttack:
         )
 
         drop_packet = (
-            random.random()
+            self.random.random()
             < self.drop_probability
         )
 
